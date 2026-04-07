@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail} from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { siteConfig } from "../config/site";
 
 export default function Footer() {
   return (
@@ -8,52 +9,52 @@ export default function Footer() {
 
         {/* MARCA */}
         <div>
-          <h3 className="text-xl font-bold text-white tracking-tight">
-            Clínica Sonrisa
+          <h3 className="text-xl font-bold text-violet-600 tracking-tight">
+            {siteConfig.branding.name}
           </h3>
 
           <p className="mt-4 text-sm text-gray-400 leading-relaxed">
-            Atención odontológica moderna con tecnología avanzada y un enfoque personalizado para cada paciente.
+            {siteConfig.footer.description}
           </p>
         </div>
 
         {/* CONTACTO */}
         <div>
-          <h4 className="text-white font-semibold mb-4 tracking-tight">
-            Contacto
+          <h4 className="text-violet-600 font-semibold mb-4 tracking-tight">
+            {siteConfig.footer.contact.contactText}
           </h4>
 
           <ul className="space-y-3 text-sm">
 
             <li className="flex items-center gap-3 hover:text-violet-400 transition">
               <a
-  href="https://www.google.com/maps/search/?api=1&query=Montevideo+Uruguay"
+  href={siteConfig.footer.contact.gMapURL}
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-3 hover:text-violet-400 transition"
 >
   <MapPin size={18} className="text-violet-500" />
-  Montevideo, Uruguay
+  {siteConfig.footer.contact.address}
 </a>
             </li>
 
             <li className="flex items-center gap-3 hover:text-violet-400 transition">
               <a
-  href="tel:+598123456789"
+  href={siteConfig.footer.contact.callPhone}
   className="flex items-center gap-3 hover:text-violet-400 transition"
 >
   <Phone size={18} className="text-violet-500" />
-  +598 123 456 789
+  {siteConfig.footer.contact.phone}
 </a>
             </li>
 
             <li className="flex items-center gap-3 hover:text-violet-400 transition">
               <a
-  href="mailto:contacto@clinica.com"
+  href={siteConfig.footer.contact.sendEmail}
   className="flex items-center gap-3 hover:text-violet-400 transition"
 >
   <Mail size={18} className="text-violet-500" />
-  contacto@clinica.com
+  {siteConfig.footer.contact.email}
 </a>
             </li>
 
@@ -62,21 +63,21 @@ export default function Footer() {
 
         {/* REDES */}
         <div>
-          <h4 className="text-white font-semibold mb-4 tracking-tight">
-            Síguenos
+          <h4 className="text-violet-600 font-semibold mb-4 tracking-tight">
+            {siteConfig.footer.social.socialTitle}
           </h4>
 
           <div className="flex gap-4">
 
             <a
-              href="#"
+              href={siteConfig.footer.social.facebook}
               className="p-3 bg-gray-900 rounded-lg hover:bg-violet-600 transition"
             >
               <FaFacebookF />
             </a>
 
             <a
-              href="#"
+              href={siteConfig.footer.social.instagram}
               className="p-3 bg-gray-900 rounded-lg hover:bg-violet-600 transition"
             >
               <FaInstagram />
@@ -89,8 +90,8 @@ export default function Footer() {
       </div>
 
       {/* DIVISOR */}
-      <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
-        © 2026 Clínica Sonrisa. Todos los derechos reservados.
+      <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-violet-400">
+        {siteConfig.footer.copyright}
       </div>
     </footer>
   );

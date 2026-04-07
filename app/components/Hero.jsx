@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { siteConfig } from "../config/site";
 
 export default function Hero() {
   return (
@@ -13,16 +14,16 @@ export default function Hero() {
   transition={{ duration: 0.8 }}
 >
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
-            Recupera tu sonrisa con 
-            <span className="text-violet-600"> confianza</span>
+            {siteConfig.hero.title}
+            <span className="text-violet-600"> {siteConfig.hero.highlight}</span>
           </h1>
 
           <p className="mt-4 text-sm uppercase tracking-widest text-violet-500 font-medium">
-  Clínica odontológica de confianza
+            {siteConfig.hero.subtitle}
 </p>
 
           <p className="mt-6 text-lg text-gray-600">
-            En Clínica Sonrisa combinamos tecnología avanzada con atención personalizada para darte resultados reales, cómodos y duraderos.
+            {siteConfig.hero.description}
           </p>
 
           {/* BOTONES */}
@@ -31,22 +32,22 @@ export default function Hero() {
               href="#contacto"
               className="bg-violet-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              Reservar consulta ahora
+              {siteConfig.hero.cta}
             </a>
 
             <a
               href="#servicios"
               className="border border-violet-600 text-violet-600 px-6 py-3 rounded-lg hover:bg-white-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              Ver servicios
+              {siteConfig.hero.secondaryCta}
             </a>
           </div>
 
           {/* MINI BENEFICIOS */}
           <div className="mt-8 flex flex-col sm:flex-row gap-6 text-sm text-gray-500">
-            <span>✔ Atención personalizada</span>
-            <span>✔ Tecnología moderna</span>
-            <span>✔ Resultados garantizados</span>
+            <span>{siteConfig.hero.miniBen1}</span>
+            <span>{siteConfig.hero.miniBen2}</span>
+            <span>{siteConfig.hero.miniBen3}</span>
           </div>
         </motion.div>
 
@@ -60,8 +61,8 @@ export default function Hero() {
           <div className="absolute -top-6 -left-6 w-32 h-32 bg-violet-200 rounded-full blur-2xl opacity-50"></div>
 
           <img
-  src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5"
-  alt="Dentista atendiendo paciente"
+  src={siteConfig.hero.image}
+  alt={siteConfig.hero.altImage}
   className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
 />
         </motion.div>

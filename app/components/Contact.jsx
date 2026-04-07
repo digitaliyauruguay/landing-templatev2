@@ -1,6 +1,6 @@
 "use client";
-
 import { useState } from "react";
+import { siteConfig } from "../config/site";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -28,20 +28,20 @@ const handleChange = (e) => {
 
     // VALIDACIÓN
     if (!form.nombre || !form.email || !form.mensaje) {
-      setError("Por favor completa todos los campos");
+      setError(siteConfig.contact.messages.error1);
       setSuccess("");
       return;
     }
 
     if (!form.email.includes("@")) {
-      setError("Email inválido");
+      setError(siteConfig.contact.messages.error2);
       setSuccess("");
       return;
     }
 
     // SIMULACIÓN ENVÍO
     setError("");
-    setSuccess("Mensaje enviado correctamente. Te contactaremos pronto.");
+    setSuccess(siteConfig.contact.messages.success);
 
     // LIMPIAR FORM
     setForm({
@@ -59,10 +59,10 @@ const handleChange = (e) => {
         {/* TÍTULO */}
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-            Contáctanos
+            {siteConfig.contact.title}
           </h2>
           <p className="mt-4 text-gray-600">
-            Agenda tu consulta o envíanos tu duda
+            {siteConfig.contact.subtitle}
           </p>
         </div>
 
@@ -75,12 +75,12 @@ const handleChange = (e) => {
          {/* NOMBRE */}
 <div className="flex flex-col">
   <label className="text-sm font-medium text-gray-700 mb-1">
-    Nombre
+    {siteConfig.contact.form.name}
   </label>
   <input
     type="text"
     name="nombre"
-    placeholder="Tu nombre"
+    placeholder={siteConfig.contact.form.placeName}
     value={form.nombre}
     onChange={handleChange}
     className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -90,12 +90,12 @@ const handleChange = (e) => {
 {/* EMAIL */}
 <div className="flex flex-col">
   <label className="text-sm font-medium text-gray-700 mb-1">
-    Email
+    {siteConfig.contact.form.email}
   </label>
   <input
     type="email"
     name="email"
-    placeholder="tu@email.com"
+    placeholder={siteConfig.contact.form.placeEmail}
     value={form.email}
     onChange={handleChange}
     className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -105,11 +105,11 @@ const handleChange = (e) => {
 {/* MENSAJE */}
 <div className="flex flex-col">
   <label className="text-sm font-medium text-gray-700 mb-1">
-    Mensaje
+    {siteConfig.contact.form.message}
   </label>
   <textarea
     name="mensaje"
-    placeholder="Escribe tu mensaje..."
+    placeholder={siteConfig.contact.form.placeMessage}
     value={form.mensaje}
     onChange={handleChange}
     className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-violet-500"
@@ -130,7 +130,7 @@ const handleChange = (e) => {
             type="submit"
             className="bg-violet-600 text-white py-3 rounded-lg hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            Enviar
+            {siteConfig.contact.form.button}
           </button>
         </form>
 

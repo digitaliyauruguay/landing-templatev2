@@ -1,22 +1,8 @@
 "use client";
-
 import { motion } from "framer-motion";
+import { siteConfig } from "../config/site";
 
 export default function Testimonials() {
-  const testimonials = [
-    {
-      name: "María González",
-      text: "Excelente atención. Me sentí muy cómoda y el resultado fue increíble.",
-    },
-    {
-      name: "Juan Pérez",
-      text: "Profesionales de verdad. Todo el proceso fue rápido y sin dolor.",
-    },
-    {
-      name: "Lucía Fernández",
-      text: "Recomiendo totalmente la clínica. Muy modernos y atentos.",
-    },
-  ];
 
   return (
     <section className="py-24 md:py-32 bg-gray-50">
@@ -25,16 +11,16 @@ export default function Testimonials() {
 
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-            Lo que dicen nuestros pacientes
+            {siteConfig.testimonials.title}
           </h2>
           <p className="mt-4 text-gray-600">
-            Opiniones reales de quienes confiaron en nosotros
+            {siteConfig.testimonials.subtitle}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
 
-          {testimonials.map((t, i) => (
+          {siteConfig.testimonials.items.map((t, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}

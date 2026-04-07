@@ -1,6 +1,7 @@
 "use client";
 import { Smile } from "lucide-react";
 import { useState } from "react";
+import { siteConfig } from "../config/site";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
 </a>
           <a href="#inicio">
   <h1 className="text-xl font-bold text-gray-900 cursor-pointer transition-all duration-300 hover:text-violet-600 hover:-translate-y-0.5 hover:scale-105">
-    Clínica Sonrisa
+    {siteConfig.branding.name}
   </h1>
 </a>
         </div>
@@ -26,16 +27,16 @@ export default function Navbar() {
         {/* MENÚ DESKTOP */}
         <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
           <a href="#" className="hover:text-violet-600 transition">
-            Inicio
+            {siteConfig.navBarItems.inicio}
           </a>
           <a href="#servicios" className="hover:text-violet-600 transition">
-            Servicios
+            {siteConfig.navBarItems.services}
           </a>
           <a href="#sobre" className="hover:text-violet-600 transition">
-            Sobre Nosotros
+            {siteConfig.navBarItems.about}
           </a>
           <a href="#contacto" className="hover:text-violet-600 transition">
-            Contacto
+            {siteConfig.navBarItems.contact}
           </a>
         </nav>
 
@@ -63,16 +64,16 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md px-6 py-4 flex flex-col gap-4 text-gray-700 font-medium">
           <a href="#" onClick={() => setMenuOpen(false)}>
-            Inicio
+            {siteConfig.navBarItems.inicio}
           </a>
           <a href="#servicios" onClick={() => setMenuOpen(false)}>
-            Servicios
+            {siteConfig.navBarItems.services}
           </a>
           <a href="#sobre" onClick={() => setMenuOpen(false)}>
-            Sobre Nosotros
+            {siteConfig.navBarItems.about}
           </a>
           <a href="#contacto" onClick={() => setMenuOpen(false)}>
-            Contacto
+            {siteConfig.navBarItems.contact}
           </a>
           <a href="https://wa.me/598123456789?text=Hola%20quiero%20agendar%20una%20consulta"
           target="_blank"

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { siteConfig } from "../config/site";
 
 export default function About() {
   return (
@@ -15,8 +16,8 @@ export default function About() {
             className="relative"
         >
           <img
-            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
-            alt="Clínica odontológica moderna"
+            src={siteConfig.about.image}
+            alt={siteConfig.about.altImage}
             className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
 />
         </motion.div>
@@ -28,25 +29,22 @@ export default function About() {
             transition={{ duration: 0.8 }}
 >
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-            Sobre nuestra clínica
+            {siteConfig.about.title}
           </h2>
 
           <p className="mt-6 text-gray-600">
-            En Clínica Sonrisa contamos con un equipo de profesionales altamente
-            capacitados, enfocados en brindarte una atención cercana, segura y de
-            calidad.
+            {siteConfig.about.sub1}
           </p>
 
           <p className="mt-4 text-gray-600">
-            Utilizamos tecnología de última generación para garantizar tratamientos
-            efectivos y cómodos para cada paciente.
+            {siteConfig.about.sub2}
           </p>
 
           {/* BENEFICIOS */}
           <div className="mt-6 flex flex-col gap-3 text-gray-700">
-            <span>✔ Más de 10 años de experiencia</span>
-            <span>✔ Equipamiento moderno</span>
-            <span>✔ Atención personalizada</span>
+            <span>{siteConfig.about.miniBen1}</span>
+            <span>{siteConfig.about.miniBen2}</span>
+            <span>{siteConfig.about.miniBen3}</span>
           </div>
 
           {/* CTA SUAVE */}
@@ -54,7 +52,7 @@ export default function About() {
             href="#contacto"
             className="inline-block mt-8 bg-violet-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            Reservar consulta ahora
+            {siteConfig.about.cta}
           </a>
         </motion.div>
 
