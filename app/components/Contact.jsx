@@ -53,7 +53,7 @@ const handleChange = (e) => {
 
   return (
     <section id="contacto" className="py-24 md:py-32 bg-white">
-      <div className="w-16 h-1 bg-violet-600 mx-auto mb-6 rounded-full"></div>
+      <div className="w-16 h-1 bg-[var(--primary)] mx-auto mb-6 rounded-full"></div>
       <div className="max-w-3xl mx-auto px-6">
 
         {/* TÍTULO */}
@@ -83,7 +83,7 @@ const handleChange = (e) => {
     placeholder={siteConfig.contact.form.placeName}
     value={form.nombre}
     onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
+    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
   />
 </div>
 
@@ -98,7 +98,7 @@ const handleChange = (e) => {
     placeholder={siteConfig.contact.form.placeEmail}
     value={form.email}
     onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500"
+    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
   />
 </div>
 
@@ -112,7 +112,7 @@ const handleChange = (e) => {
     placeholder={siteConfig.contact.form.placeMessage}
     value={form.mensaje}
     onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-violet-500"
+    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
   ></textarea>
 </div>
 
@@ -128,7 +128,7 @@ const handleChange = (e) => {
           {/* BOTÓN */}
           <button
             type="submit"
-            className="bg-violet-600 text-white py-3 rounded-lg hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="bg-[var(--primary)] text-white py-3 rounded-lg hover:bg-[var(--primary-hover)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             {siteConfig.contact.form.button}
           </button>

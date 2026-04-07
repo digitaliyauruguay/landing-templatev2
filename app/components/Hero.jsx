@@ -15,10 +15,10 @@ export default function Hero() {
 >
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
             {siteConfig.hero.title}
-            <span className="text-violet-600"> {siteConfig.hero.highlight}</span>
+            <span className="text-[var(--primary)]"> {siteConfig.hero.highlight}</span>
           </h1>
 
-          <p className="mt-4 text-sm uppercase tracking-widest text-violet-500 font-medium">
+          <p className="mt-4 text-sm uppercase tracking-widest text-[var(--primary)] font-medium">
             {siteConfig.hero.subtitle}
 </p>
 
@@ -30,14 +30,14 @@ export default function Hero() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <a
               href="#contacto"
-              className="bg-violet-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-hover)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {siteConfig.hero.cta}
             </a>
 
             <a
               href="#servicios"
-              className="border border-violet-600 text-violet-600 px-6 py-3 rounded-lg hover:bg-white-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="border border-[var(--primary)] text-[var(--primary)] px-6 py-3 rounded-lg hover:bg-white-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {siteConfig.hero.secondaryCta}
             </a>

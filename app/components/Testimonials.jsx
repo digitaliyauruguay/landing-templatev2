@@ -6,7 +6,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 md:py-32 bg-gray-50">
-      <div className="w-16 h-1 bg-violet-600 mx-auto mb-6 rounded-full"></div>
+      <div className="w-16 h-1 bg-[var(--primary)] mx-auto mb-6 rounded-full"></div>
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-14">

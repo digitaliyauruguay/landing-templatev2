@@ -1,9 +1,16 @@
 export const siteConfig = {
-  branding: {
+ theme: {
+  primary: "#7c3aed",       // violeta
+  primaryHover: "#6d28d9",  // violeta oscuro
+},
+  
+    branding: {
     name: "Clínica Sonrisa",
     logoText: "CS",
     ourServices: "Nuestros Servicios",
     servDescription: "Tratamientos diseñados para cuidar tu salud y mejorar tu sonrisa",
+    metaTitle: "Clínica Odontológica en Montevideo - Clínica Sonrisa",
+    metaDescription: "Atención dental profesional con tecnología moderna. Servicios de limpieza, blanqueamiento, ortodoncia y más en Montevideo.",
   },
 
   navBarItems: {
@@ -133,5 +140,6 @@ export const siteConfig = {
   },
 
   copyright: "© 2026 Clínica Sonrisa. Todos los derechos reservados.",
+  
 },
 };

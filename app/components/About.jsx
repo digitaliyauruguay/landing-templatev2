@@ -5,7 +5,7 @@ import { siteConfig } from "../config/site";
 export default function About() {
   return (
     <section id="sobre" className="py-24 md:py-32 bg-gray-50">
-      <div className="w-16 h-1 bg-violet-600 mx-auto mb-6 rounded-full"></div>
+      <div className="w-16 h-1 bg-[var(--primary)] mx-auto mb-6 rounded-full"></div>
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
         {/* IMAGEN */}
@@ -50,7 +50,7 @@ export default function About() {
           {/* CTA SUAVE */}
           <a
             href="#contacto"
-            className="inline-block mt-8 bg-violet-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-violet-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            className="inline-block mt-8 bg-[var(--primary)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-hover)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             {siteConfig.about.cta}
           </a>

@@ -13,12 +13,12 @@ export default function Navbar() {
         {/* LOGO + NOMBRE */}
         <div className="flex items-center gap-3">
           <a href="#inicio">
-  <div className="w-10 h-10 bg-violet-600 rounded-full flex items-center justify-center shadow-md cursor-pointer transition-all duration-300 hover:scale-110">
+  <div className="w-10 h-10 bg-[var(--primary)] rounded-full flex items-center justify-center shadow-md cursor-pointer transition-all duration-300 hover:scale-110">
     <Smile size={20} className="text-white" strokeWidth={2} />
   </div>
 </a>
           <a href="#inicio">
-  <h1 className="text-xl font-bold text-gray-900 cursor-pointer transition-all duration-300 hover:text-violet-600 hover:-translate-y-0.5 hover:scale-105">
+  <h1 className="text-xl font-bold text-gray-900 cursor-pointer transition-all duration-300 hover:text-[var(--primary)] hover:-translate-y-0.5 hover:scale-105">
     {siteConfig.branding.name}
   </h1>
 </a>
@@ -26,16 +26,16 @@ export default function Navbar() {
 
         {/* MENÚ DESKTOP */}
         <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-          <a href="#" className="hover:text-violet-600 transition">
+          <a href="#" className="hover:text-[var(--primary)] transition">
             {siteConfig.navBarItems.inicio}
           </a>
-          <a href="#servicios" className="hover:text-violet-600 transition">
+          <a href="#servicios" className="hover:text-[var(--primary)] transition">
             {siteConfig.navBarItems.services}
           </a>
-          <a href="#sobre" className="hover:text-violet-600 transition">
+          <a href="#sobre" className="hover:text-[var(--primary)] transition">
             {siteConfig.navBarItems.about}
           </a>
-          <a href="#contacto" className="hover:text-violet-600 transition">
+          <a href="#contacto" className="hover:text-[var(--primary)] transition">
             {siteConfig.navBarItems.contact}
           </a>
         </nav>
