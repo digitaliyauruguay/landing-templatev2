@@ -48,6 +48,15 @@ export default function Hero() {
             <span>{siteConfig.hero.miniBen1}</span>
             <span>{siteConfig.hero.miniBen2}</span>
             <span>{siteConfig.hero.miniBen3}</span>
+            
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-6 text-sm text-´">
+            <p className="mt-6 text-lg text-[var(--primary)]">
+            
+            {siteConfig.hero.socialTest}
+            </p>
+            
           </div>
         </motion.div>
 
@@ -58,7 +67,7 @@ export default function Hero() {
   transition={{ duration: 1 }}
   className="relative"
 >
-          <div className="absolute -top-6 -left-6 w-32 h-32 bg-violet-200 rounded-full blur-2xl opacity-50"></div>
+          <div className="absolute -top-6 -left-6 w-32 h-32 bg-[var(--primary)] rounded-full blur-2xl opacity-50"></div>
 
           <img
   src={siteConfig.hero.image}

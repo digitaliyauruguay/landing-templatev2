@@ -47,7 +47,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-green-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-  WhatsApp
+  Enviar mensaje ahora
 </a>
         </div>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 bg-green-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-green-600 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
-  WhatsApp
+ Enviar mensaje ahora
 </a>
         </div>
       )}

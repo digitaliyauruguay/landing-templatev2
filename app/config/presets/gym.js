@@ -8,7 +8,7 @@ const gym = {
     name: "IronFit Gym",
     logoIcon: "Dumbbell",
     ourServices: "Nuestros Servicios",
-    servDescription: "Programas diseñados para mejorar tu rendimiento y transformar tu cuerpo",
+    servDescription: "¿Por qué elegirnos?",
     metaTitle: "Gimnasio en Montevideo - IronFit Gym",
     metaDescription: "Entrenamiento profesional con planes personalizados. Fitness, fuerza, cardio y más en Montevideo.",
   },
@@ -22,7 +22,7 @@ const gym = {
 
   contact: {
     title: "Contáctanos",
-    subtitle: "Agenda tu entrenamiento o consulta",
+    subtitle: "Tu cambio puede comenzar hoy, solo necesitás dar el primer paso.",
 
     form: {
       name: "Nombre",
@@ -42,15 +42,16 @@ const gym = {
   },
 
   hero: {
-    title: "Transformá tu cuerpo con",
-    highlight: "disciplina",
-    subtitle: "Entrenamiento profesional",
+    title: "Resultados reales en",
+    highlight: "pocas semanas",
+    subtitle: "Entrenamiento personalizado certificado",
     description: "En IronFit Gym combinamos entrenamiento de alto nivel con acompañamiento personalizado para lograr resultados reales y sostenibles.",
-    cta: "Comenzar ahora",
+    cta: "Agendar clase",
     secondaryCta: "Ver programas",
-    miniBen1: "✔ Entrenadores certificados",
-    miniBen2: "✔ Equipamiento moderno",
-    miniBen3: "✔ Resultados reales",
+    miniBen1: "✔ Sin compromisos",
+    miniBen2: "✔ Respuesta rápida",
+    miniBen3: "✔ Entrenadores especializados",
+    socialTest: "+200 clientes ya entrenan con nosotros",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
     altImage: "Personas entrenando en gimnasio",
   },
@@ -107,7 +108,7 @@ const gym = {
     items: [
       {
         name: "Martín Pérez",
-        text: "El cambio fue increíble. Muy buen ambiente y entrenadores.",
+        text: "Bajé 8kg en 2 meses. Nunca había logrado esto antes.",
       },
       {
         name: "Sofía López",
