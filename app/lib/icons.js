@@ -1,11 +1,25 @@
-import { Smile, Sparkles, AlignJustify, Activity, ShieldCheck, Stethoscope, Zap } from "lucide-react";
+import {
+  Smile,
+  Sparkles,
+  Activity,
+  ShieldCheck,
+  Stethoscope,
+  Zap,
+  Users,
+  Dumbbell,
+  HeartPulse,
+  Apple,
+} from "lucide-react";
 
 export const iconMap = {
-    Sparkles,
-    Smile,
-    AlignJustify,
-    Activity,
-    ShieldCheck,
-    Stethoscope,
-    Zap,
+  Smile,
+  Sparkles,
+  Activity,
+  ShieldCheck,
+  Stethoscope,
+  Zap,
+  Users,
+  Dumbbell,
+  HeartPulse,
+  Apple,
 };

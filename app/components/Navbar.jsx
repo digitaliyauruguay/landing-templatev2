@@ -1,10 +1,11 @@
 "use client";
-import { Smile } from "lucide-react";
+import { iconMap } from "../lib/icons";
 import { useState } from "react";
 import { siteConfig } from "../config/site";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const LogoIcon = iconMap[siteConfig.branding.logoIcon];
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50 border-b border-gray-200">
@@ -14,7 +15,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <a href="#inicio">
   <div className="w-10 h-10 bg-[var(--primary)] rounded-full flex items-center justify-center shadow-md cursor-pointer transition-all duration-300 hover:scale-110">
-    <Smile size={20} className="text-white" strokeWidth={2} />
+    {LogoIcon && <LogoIcon size={20} className="text-white" strokeWidth={2} />}
   </div>
 </a>
           <a href="#inicio">
