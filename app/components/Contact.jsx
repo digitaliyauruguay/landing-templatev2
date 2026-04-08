@@ -12,18 +12,17 @@ export default function Contact() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-const handleChange = (e) => {
-  setForm({
-    ...form,
-    [e.target.name]: e.target.value,
-  });
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
 
-  // LIMPIAR MENSAJES AL ESCRIBIR
-  setError("");
-  setSuccess("");
-};
+    setError("");
+    setSuccess("");
+  };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // VALIDACIÓN
@@ -39,16 +38,37 @@ const handleChange = (e) => {
       return;
     }
 
-    // SIMULACIÓN ENVÍO
-    setError("");
-    setSuccess(siteConfig.contact.messages.success);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.nombre,
+          email: form.email,
+          message: form.mensaje,
+        }),
+      });
 
-    // LIMPIAR FORM
-    setForm({
-      nombre: "",
-      email: "",
-      mensaje: "",
-    });
+      if (res.ok) {
+        setError("");
+        setSuccess(siteConfig.contact.messages.success);
+
+        // LIMPIAR FORM
+        setForm({
+          nombre: "",
+          email: "",
+          mensaje: "",
+        });
+      } else {
+        setError("Error al enviar. Intentá nuevamente.");
+        setSuccess("");
+      }
+    } catch (err) {
+      setError("Error de conexión.");
+      setSuccess("");
+    }
   };
 
   return (
@@ -72,49 +92,49 @@ const handleChange = (e) => {
           className="bg-gray-50 p-8 rounded-2xl shadow-md flex flex-col gap-5"
         >
 
-         {/* NOMBRE */}
-<div className="flex flex-col">
-  <label className="text-sm font-medium text-gray-700 mb-1">
-    {siteConfig.contact.form.name}
-  </label>
-  <input
-    type="text"
-    name="nombre"
-    placeholder={siteConfig.contact.form.placeName}
-    value={form.nombre}
-    onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-  />
-</div>
+          {/* NOMBRE */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              {siteConfig.contact.form.name}
+            </label>
+            <input
+              type="text"
+              name="nombre"
+              placeholder={siteConfig.contact.form.placeName}
+              value={form.nombre}
+              onChange={handleChange}
+              className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            />
+          </div>
 
-{/* EMAIL */}
-<div className="flex flex-col">
-  <label className="text-sm font-medium text-gray-700 mb-1">
-    {siteConfig.contact.form.email}
-  </label>
-  <input
-    type="email"
-    name="email"
-    placeholder={siteConfig.contact.form.placeEmail}
-    value={form.email}
-    onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-  />
-</div>
+          {/* EMAIL */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              {siteConfig.contact.form.email}
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder={siteConfig.contact.form.placeEmail}
+              value={form.email}
+              onChange={handleChange}
+              className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            />
+          </div>
 
-{/* MENSAJE */}
-<div className="flex flex-col">
-  <label className="text-sm font-medium text-gray-700 mb-1">
-    {siteConfig.contact.form.message}
-  </label>
-  <textarea
-    name="mensaje"
-    placeholder={siteConfig.contact.form.placeMessage}
-    value={form.mensaje}
-    onChange={handleChange}
-    className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
-  ></textarea>
-</div>
+          {/* MENSAJE */}
+          <div className="flex flex-col">
+            <label className="text-sm font-medium text-gray-700 mb-1">
+              {siteConfig.contact.form.message}
+            </label>
+            <textarea
+              name="mensaje"
+              placeholder={siteConfig.contact.form.placeMessage}
+              value={form.mensaje}
+              onChange={handleChange}
+              className="p-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[var(--primary)]"
+            ></textarea>
+          </div>
 
           {/* MENSAJES */}
           {error && (
